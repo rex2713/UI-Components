@@ -1,0 +1,27 @@
+* {
+  @apply tracking-wide;
+}
+
+//自定義 input focus效果
+.inputContainer {
+  .inputText:focus + .inputLabel,
+  :not(:placeholder-shown) + .inputLabel {
+    @apply -translate-y-4 bg-white pl-1 pr-2 text-sm text-inputBorderFocus;
+  }
+}
+
+//alert animation
+@keyframes alertAnimation {
+  from {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(40%) translateX(-50%);
+    opacity: 1;
+    @apply absolute left-1/2 top-0;
+  }
+}
+.alertAnimation {
+  animation: alertAnimation 0.5s ease-out forwards;
+}
