@@ -3,6 +3,8 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import './index.css'
 import './assets/scss/main.scss'
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 // Set up a Router instance
 const router = createRouter({

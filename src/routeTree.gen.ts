@@ -14,7 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as UserImport } from './routes/user'
 import { Route as IndexImport } from './routes/index'
 import { Route as UserUserImport } from './routes/user/user'
-import { Route as UserAboutImport } from './routes/user/about'
+import { Route as UserInputImport } from './routes/user/input'
 
 // Create/Update Routes
 
@@ -33,8 +33,8 @@ const UserUserRoute = UserUserImport.update({
   getParentRoute: () => UserRoute,
 } as any)
 
-const UserAboutRoute = UserAboutImport.update({
-  path: '/about',
+const UserInputRoute = UserInputImport.update({
+  path: '/input',
   getParentRoute: () => UserRoute,
 } as any)
 
@@ -56,11 +56,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserImport
       parentRoute: typeof rootRoute
     }
-    '/user/about': {
-      id: '/user/about'
-      path: '/about'
-      fullPath: '/user/about'
-      preLoaderRoute: typeof UserAboutImport
+    '/user/input': {
+      id: '/user/input'
+      path: '/input'
+      fullPath: '/user/input'
+      preLoaderRoute: typeof UserInputImport
       parentRoute: typeof UserImport
     }
     '/user/user': {
@@ -77,7 +77,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
-  UserRoute: UserRoute.addChildren({ UserAboutRoute, UserUserRoute }),
+  UserRoute: UserRoute.addChildren({ UserInputRoute, UserUserRoute }),
 })
 
 /* prettier-ignore-end */
@@ -98,12 +98,12 @@ export const routeTree = rootRoute.addChildren({
     "/user": {
       "filePath": "user.tsx",
       "children": [
-        "/user/about",
+        "/user/input",
         "/user/user"
       ]
     },
-    "/user/about": {
-      "filePath": "user/about.tsx",
+    "/user/input": {
+      "filePath": "user/input.tsx",
       "parent": "/user"
     },
     "/user/user": {

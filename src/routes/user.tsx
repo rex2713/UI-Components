@@ -1,21 +1,22 @@
-import { Outlet, createFileRoute, redirect } from '@tanstack/react-router'
-import Navbar from '../components/Navbar'
+import { Outlet, createFileRoute, redirect } from "@tanstack/react-router";
+import Navbar from "../components/Navbar";
 
-export const Route = createFileRoute('/user')({
+export const Route = createFileRoute("/user")({
   //路由守衛（身份驗證）
   beforeLoad: async ({ location }) => {
-    if (!localStorage.getItem('token')) {
+    if (!localStorage.getItem("token")) {
       throw redirect({
-        to: '/',
+        to: "/",
         search: {
           redirect: location.href,
-        }
-      })
+        },
+      });
     }
   },
-  component: () => <div>
-    <Navbar />
-    <hr />
-    <Outlet />
-  </div>
-})
+  component: () => (
+    <div className="flex w-full">
+      <Navbar />
+      <Outlet />
+    </div>
+  ),
+});

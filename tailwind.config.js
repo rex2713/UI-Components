@@ -3,6 +3,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      // colors:{
+      //   main:'#1a81db',
+      //   sub:'#865DFC',
+      //   siteBg:'#f5f6fa',
+      //   black:'#333333',
+      //   divide:'#E7EAF5',
+      //   note:'#AFAEAE',
+      //   success:'#5DC361',
+      //   warning:'#FFC107',
+      //   error:'#F44336',
+      // }
       colors: {
         // 主色 (Primary)
         primary: "#5D9CEC", // 馬卡龍淺藍色
