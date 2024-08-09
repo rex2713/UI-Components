@@ -34,6 +34,7 @@ function InputComponent() {
   };
   return (
     <div className="w-full bg-buttonDisabled">
+      {/* input */}
       <div className="componentContainer">
         <h3 className="componentTitle">Input</h3>
         <Parmeter params={inputParams} />
@@ -48,6 +49,7 @@ function InputComponent() {
           validationRules={{ minLength: [3, "需大於三個字符"] }}
         />
       </div>
+      {/* select */}
       <div className="componentContainer">
         <h3 className="componentTitle">Select</h3>
         <Parmeter params={selectParams} />
